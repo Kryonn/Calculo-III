@@ -1,0 +1,1089 @@
+    \documentclass[10pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+
+\title{Lista 1 - Cálculo 3}
+\author{Kevin Nakashima}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Calcule a integral dupla 
+    $\displaystyle \iint_{Q} \sin(x - y) \, dx\, dy$,
+    sendo $Q = [0, \pi/2] \times [0, \pi/2].$
+    (Resp. 0.) \\ \textbf{Resolução:} \\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_{Q} \sin(x - y) \ dx dy
+        &= \int_{0}^{\frac{\pi}{2}} \int_{0}^{\frac{\pi}{2}} \sin(x-y)\ dxdy\\
+        &=-\int_{0}^{\frac{\pi}{2}} \Big[\cos(x-y)\Big]_{0}^{\frac{\pi}{2}}\ dy\\
+        &=-\int_{0}^{\frac{\pi}{2}}\cos\Big(\frac{\pi}{2}-y\Big)-\cos(-y)\ dy\\
+        &=-\int_{0}^{\frac{\pi}{2}}\sin(y)-\cos(y)\ dy\\
+        &=\Big[\cos(y)+\sin(y)\Big]_{0}^{\frac{\pi}{2}}\\
+        &=0+1-1-0\\
+        &=0.
+    \end{align*}
+
+    \item Desenhe a região de integração no plano $xy$ e calcule a integral iterada
+    $\displaystyle \int_0^4 \int_0^y \sqrt{9 + y^2} \, dx\, dy.$
+    (Resp. 98/3.)\\ \textbf{Resolução:}\\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_0^4 \int_0^y \sqrt{9 + y^2} \ dx dy
+        &=\int_0^4 y\ \sqrt{9 + y^2} \ dy,\ u=9+y^2 \Rightarrow\ du=2y\ dy\\
+        &=\frac{1}{2}\cdot \int_9^{25}  \sqrt{u} \ du\\
+        &=\frac{1}{2}\cdot \frac{2}{3}\cdot\Bigg[u\sqrt{u}\Bigg]_{9}^{25}\\
+        &=\frac{1}{3}\cdot(125-27)\\
+        &=\frac{98}{3}.
+    \end{align*}
+    \newpage
+    \item Determine o volume do sólido limitado pelas superfícies 
+    $x^2 + y^2 = 16 \quad \text{e} \quad z = 4x \quad \text{para } x \geq 0.$
+    (Resp. 512/3.) \\ \textbf{Resolução:}\\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_0^4 \int_{-\sqrt{16-x^2}}^{\sqrt{16-x^2}} 4x \ dy dx
+        &=8\int_0^4 x \sqrt{16-x^2} \ dx,\ u=16-x^2\Rightarrow\ du=-2x\ dx\\
+        &=4\int_0^{16} \sqrt{u} \ du\\
+        &=4\cdot \frac{2}{3}\cdot \Bigg[u\sqrt{u}\Bigg]_{0}^{16}\\
+        &=\frac{8}{3}\cdot 64\\
+        &=\frac{512}{3}.
+    \end{align*}
+
+    \item Determine a região de integração $D$, esboce-a no plano $xy$ e troque a ordem de integração da integral iterada 
+    $ \displaystyle \int_0^1 \int_{x^3}^{\sqrt{x}} f(x, y) \, dy \, dx $.\\ \textbf{Resolução:}\\
+    Troca da ordem de integração:
+    \begin{equation*}
+        \displaystyle \int_0^1 \int_{x^3}^{\sqrt{x}} f(x, y) \ dy dx=
+        \displaystyle \int_{0}^{1} \int_{y^2}^{\sqrt[3]{y}} f(x, y) \ dx dy.
+    \end{equation*}
+
+    \item Calcule a integral dupla $ \displaystyle \iint_Q \cos(y^3) \, dx \, dy $, sendo $Q$ a região no plano $xy$ limitada por $y = \sqrt{x}$, $y = 2$ e $x = 0$. (Resp. $(\sin8)/3$.)\\ \textbf{Resolução:} \\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_Q \cos(y^3) \ dx dy
+        &=\int_{0}^{2} \int_{0}^{y^2}\cos(y^3)\ dxdy\\
+        &=\int_{0}^{2} y^2\cos(y^3)\ dy,\ u=y^3\Rightarrow\ du=3y^2\ dy\\
+        &=\frac{1}{3}\ \int_{0}^{8}\cos(u)\ du\\
+        &=\frac{1}{3}\ \Big[\sin(u)\Big]_{0}^{8}\\
+        &=\frac{\sin(8)}{3}.\\
+    \end{align*}
+    \newpage
+    \item Determine o volume do sólido limitado pelas superfícies $z = 1 - y^2$, $x + z = 2$ e $x = 2$ para $z \geq 0$. (Resp. $8/15$.)\\ \textbf{Resolução:}\\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_{-1}^{1} \int_{y^2+1}^{2}x-y^2-1\ dxdy
+        &=\int_{-1}^{1} \Bigg[\frac{x^2}{2}-y^2x-x\Bigg]_{y^2+1}^{2}\ dy\\
+        &=\frac{1}{2}\ \int_{-1}^{1} y^4-2y^2+1 \ dy\\
+        &=\frac{1}{2}\ \Bigg[\frac{y^5}{5}-\frac{2y^3}{3}+y\Bigg]_{-1}^{1}\\
+        &=\frac{1}{2}\cdot \frac{16}{15} \\
+        &=\frac{8}{15}.
+    \end{align*}
+
+    \item Encontre o volume do sólido limitado pelos cilindros 
+    $ \displaystyle x^2 + y^2 = a^2 $ e 
+    $ \displaystyle x^2 + z^2 = a^2 $. 
+    (Resp. $16a^3/3$)\\ \textbf{Resolução:}\\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_{-a}^{a} \int_{-\sqrt{a^2-x^2}}^{\sqrt{a^2-x^2}}2\sqrt{a^2-x^2}\ dydx
+        &=4\ \int_{-a}^{a} a^2-x^2 \ dx\\
+        &=4\ \Bigg[a^2x-\frac{x^3}{3}\Bigg]_{-a}^{a}\\
+        &=4\cdot \frac{4a^3}{3} \\
+        &=\frac{16a^3}{3}.
+    \end{align*}
+    
+    \item Calcule 
+    $ \displaystyle \iint_D \ln(x^2 + y^2)\, dA $, sendo $D$ a região da Figura 1 no primeiro quadrante do plano $xy$ situada entre as circunferências 
+    $ \displaystyle x^2 + y^2 = 1 $ e 
+    $ \displaystyle x^2 + y^2 = 4 $. 
+    (Resp. $ \displaystyle \frac{\pi}{4}(8 \ln 2 - 3) $)\\ \textbf{Resolução:}\\
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 1\le r \le 2,\quad 
+ 0\le \theta \le \frac{\pi}{2}. 
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_D \ln(x^2 + y^2)\ dA
+        &=\int_{0}^{\frac{\pi}{2}} \int_{1}^{2}r\ln{(r^2)} \ drd\theta,\ u=r^2\Rightarrow\ du=2r\ dr\\
+        &=\frac{1}{2}\ \int_{0}^{\frac{\pi}{2}} \int_{1}^{4}\ln{(u)}\ dud\theta\\
+        &=\frac{1}{2}\ \int_{0}^{\frac{\pi}{2}}\ d \theta \cdot \int_{1}^{4}\ln{(u)}\ du\\
+        &=\frac{\pi}{4}\ (8\ln{(2)}-3).
+    \end{align*}
+    \newpage
+    
+    \item Calcule o volume limitado pelas superfícies 
+    $ \displaystyle z = 0 $, 
+    $ \displaystyle x^2 + y^2 = 2y $ e 
+    $ \displaystyle z = \sqrt{x^2 + y^2} $. 
+    Veja Figura 2. 
+    (Resp. $ 32/9 $)\\ \textbf{Resolução:} \\
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 0\le r \le 2\sin(\theta),\quad 
+ 0\le \theta \le \pi. 
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_D \sqrt{x^2+y^2}\ dA
+        &=\int_{0}^{\pi} \int_{0}^{2\sin(\theta)}r^2 \ drd\theta\\
+        &=\int_{0}^{\pi}\Bigg[\frac{r^3}{3}\Bigg]_{0}^{2\sin(\theta)} \ d\theta\\
+        &=\frac{8}{3}\ \int_{0}^{\pi}\sin^3(\theta)\ d\theta\\
+        &=\frac{8}{3}\ \int_{0}^{\pi}\sin(\theta)(1-\cos^2(\theta))\ d\theta,\ u=\cos(\theta)\Rightarrow\ du=-\sin(\theta)\ d\theta\\
+        &=\frac{8}{3}\int_{-1}^{1}(1-u^2)\ du\\
+        &=\frac{8}{3}\ \Bigg[u-\frac{u^3}{3}\Bigg]_{-1}^{1}\\
+        &=\frac{8}{3}\cdot \frac{4}{3}\\
+        &=\frac{32}{9}.
+    \end{align*}
+
+    \item Determine a área da região \( D \) da Figura 3 no plano \( xy \) definida por
+    $$
+    D = \left\{ (x, y) \in \mathbb{R}^2 : x^2 + (y - 2)^2 \leq 4 \text{ e } x^2 + y^2 \geq 4 \right\}.
+    $$
+    (Resp. \( \dfrac{4\pi}{3} + 2\sqrt{3} \).)\\ \textbf{Resolução:}\\
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 2\le r \le 4\sin(\theta),\quad 
+ \frac{\pi}{6}\le \theta \le \frac{5\pi}{6}. 
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_D \ dA
+        &=\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \int_{2}^{4\sin(\theta)}r \ drd\theta\\
+        &=\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \Bigg[\frac{r^2}{2}\Bigg]_{2}^{4\sin(\theta)} \ d\theta\\
+        &=\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}}(8\sin^2(\theta)-2)\ d\theta\\
+        &=\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}}\Bigg[8\Bigg(\frac{1-\cos(2\theta)}{2}\Bigg)-2\Bigg]\ d\theta\\
+        &=\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}}(2-4\cos(2\theta))\ d\theta\\
+        &=\Bigg[2\theta-2\sin(2\theta)\Bigg]_{\frac{\pi}{6}}^{\frac{5\pi}{6}}\\
+        &=\frac{4\pi}{3}+2\sqrt{3}.
+    \end{align*}
+    \newpage
+    \item Determine o volume do sólido \( W \) da Figura 4 dado por
+    \[
+    W = \left\{ (x, y, z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 \leq 25 \text{ e } x^2 + y^2 \geq 9 \right\}.
+    \]
+    (Resp. \( \frac{256\pi}{3} \).)\\ \textbf{Resolução:}\\
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 3\le r \le 5,\quad 
+ 0\le \theta \le 2\pi. 
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        2\iint_D \sqrt{25-x^2-y^2}\ dA
+        &=2\int_{0}^{2\pi} \int_{3}^{5} r\ \sqrt{25-r^2}\ drd\theta,\ u=25-r^2\Rightarrow\ du=-2r\ dr\\
+        &=\int_{0}^{2\pi}\ d\theta \cdot \int_{0}^{16}  \sqrt{u}\ du\\
+        &=\frac{4\pi}{3}\cdot \Bigg[u\sqrt{u}\Bigg]_{0}^{16}\\
+        &=\frac{4\pi}{3}\cdot 64\\
+        &=\frac{256\pi}{3}.\\
+    \end{align*}
+
+    \item \begin{itemize}
+        \item [(a)] Definimos uma integral imprópria sobre todo $\mathbb{R}^2$ por
+        \[
+        I = \iint_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dA = 
+        \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-(x^2+y^2)}\,dy\,dx 
+        = \lim_{a \to \infty} \iint_{D_a} e^{-(x^2+y^2)}\,dA
+        \]
+        onde $D_a$ é o disco com raio $a$ e centro na origem. Mostre que
+        \[
+        I = \iint_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dA 
+        = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-(x^2+y^2)}\,dy\,dx = \pi.
+        \]
+        \\ \textbf{Resolução:}\\
+        Seja
+        \[
+        I(a) = \iint_{D_a} e^{-(x^2+y^2)} \, dA,
+        \]
+        em que 
+        \[
+        D_a = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 \leq a^2\}.
+        \]
+        De acordo com o definido no enunciado, temos 
+        \[
+        I = \lim_{a \to \infty} I(a), 
+        \]
+        então devemos mostrar que
+        \[
+        I = \lim_{a \to \infty} I(a) = \pi.
+        \]
+        
+        Para isso, notamos que a região de integração ($D_a$) em coordenadas polares
+        \[
+        x = r \cos(\theta), \quad y = r \sin(\theta),
+        \]
+        é obtida para $(r,\theta) \in [0,a] \times [0,2\pi]$. Então, aplicamos o Teorema de Fubini e a mudança de variável na integral $I(a)$ (observando que $x^2 + y^2 = r^2$), para obter o seguinte:
+        
+        \[
+        I(a) = \int_0^{2\pi} \int_0^a r e^{-r^2} \, dr d\theta 
+        = \int_0^{2\pi} d\theta \int_0^a r e^{-r^2} dr 
+        = 2\pi \int_0^a r e^{-r^2} \, dr.
+        \]
+        
+        Agora, calculemos $\int_0^a r e^{-r^2} dr$. Chamando $u = -r^2$ (então $du = -2r dr$), observamos que $r \in [0,a]$ implica que $u = 0$, e $r=a$ implica que $u=-a^2$, então
+        \[
+        \int_0^a r e^{-r^2} dr = \int_0^a r e^u \cdot \frac{du}{-2r} = -\frac{1}{2} \int_0^a e^u du 
+        = \frac{1}{2} \int_{-a^2}^0 e^u du,
+        \]
+        daí
+        \[
+        \int_0^a r e^{-r^2} dr = \frac{1}{2} \left[ e^u \right]_{-a^2}^0 = \frac{1}{2} \left( 1 - e^{-a^2} \right).
+        \]
+        
+        Então,
+        \[
+        I(a) = 2\pi \int_0^a r e^{-r^2} dr = 2\pi \cdot \frac{1}{2}(1 - e^{-a^2}) 
+        = \pi (1 - e^{-a^2}).
+        \]
+        
+        De onde concluímos que
+        \[
+        I = \lim_{a \to \infty} I(a) = \lim_{a \to \infty} \pi \left( 1 - e^{-a^2} \right) = \pi.
+        \]
+        
+        \item [(b)] Uma definição equivalente da integral imprópria da parte (a) é
+        \[
+        I = \iint_{\mathbb{R}^2} e^{-(x^2+y^2)}\,dA 
+        = \lim_{a \to \infty} \iint_{S_a} e^{-(x^2+y^2)}\,dA
+        \]
+        onde $S_a$ é o quadrado com vértices $(\pm a, \pm a)$. Use essa definição para mostrar que
+        \[
+         = \int_{-\infty}^{\infty} e^{-x^2} \, dx \int_{-\infty}^{\infty} e^{-y^2} \, dy = \pi.
+        \]
+        \\ \textbf{Resolução:}
+        \begin{align*}
+            I&=\lim_{a \to \infty} \iint_{S_a} e^{-(x^2+y^2)}\,dA\\&=\lim_{a \to \infty} \int_{-a}^{a}\int_{-a}^{a} e^{-(x^2+y^2)}\,dxdy\\&=\lim_{a\rightarrow\infty}\Bigg(\int_{-a}^{a}e^{-x^2}\ dx\int_{-a}^{a}e^{-y^2}\ dy\Bigg)\\&=\int_{-\infty}^{\infty}e^{-x^2}\ dx\int_{-\infty}^{\infty}e^{-y^2}\ dy\\
+            &=\pi.
+        \end{align*}
+        
+        \item [(c)] Deduza
+        \[
+        \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}.
+        \]
+        \\ \textbf{Resolução:}\\
+        \begin{equation*}
+            \Bigg(\int_{-\infty}^{\infty}e^{-x^2}\ dx\Bigg)^2=\pi\ \Rightarrow\ \int_{-\infty}^{\infty}e^{-x^2}\ dx=\sqrt{\pi}.
+        \end{equation*}
+        
+        \item [(d)] Fazendo a mudança de variável $t = \sqrt{2}x$, mostre que
+        \[
+        \int_{-\infty}^{\infty} e^{-x^2/2} \, dx = \sqrt{2\pi}.
+        \]\\ \textbf{Resolução:}\\
+        \begin{equation*}
+            \int_{-\infty}^{\infty} e^{-x^2/2} \, dx=\sqrt{2}\ \int_{-\infty}^{\infty}e^{-u^2}\ du=\sqrt{2}\cdot\sqrt{\pi}=\sqrt{2\pi}
+        \end{equation*}
+    \end{itemize}
+
+    \item Uma carga elétrica é distribuída sobre o disco $\{(x, y) \in \mathbb{R}^2,\ x^2 + y^2 \leq 1\}$, de modo que a densidade de carga em $(x, y)$ é $\sigma(x, y) = \sqrt{x^2 + y^2}$ (medida em coulombs por metro quadrado). Determine a carga total no disco.\\ \textbf{Resolução:}\\
+    \begin{equation*}
+        Q=\iint_D \sigma(x,\ y)\ dA.
+    \end{equation*}
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 0\le r \le 1,\quad 
+ 0\le \theta \le 2\pi. 
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_D \sigma(x,\ y)\ dA
+        &=\int_{0}^{2\pi} \int_{0}^{1} r^2\ drd\theta\\
+        &=\int_{0}^{2\pi}\ d\theta \cdot \Bigg[\frac{r^3}{3}\Bigg]_{0}^{1}\\
+        &=2\pi \cdot \frac{1}{3}\\
+        &=\frac{2\pi}{3}\ \text{coulombs}.
+    \end{align*}
+
+    \item Uma lâmina ocupa a parte do disco $\{(x, y) \in \mathbb{R}^2,\ x^2 + y^2 \leq 1\}$ no primeiro quadrante. Determine o centro de massa se a densidade em qualquer ponto for proporcional à distância do ponto ao eixo $x$. (Resp. $(3/8,\ 3\pi/16)$)\\ \textbf{Resolução:} \\
+    \begin{equation*}
+        x_{CM}=\frac{1}{M}\ \iint_D x\ \sigma(x,\ y)\ dA,\quad y_{CM}=\frac{1}{M}\ \iint_D y\ \sigma(x,\ y)\ dA.
+    \end{equation*}
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 0\le r \le 1,\quad 
+ 0\le \theta \le \frac{\pi}{2}. 
+    \end{equation*}
+    Cálculo de $M$:
+    \begin{align*}
+        M
+        &=\iint_D \sigma(x,\ y)\ dA\\
+        &=\int_{0}^{\frac{\pi}{2}} \int_{0}^{1}r^2\sin(\theta) \ drd\theta\\
+        &=\int_{0}^{\frac{\pi}{2}} \sin(\theta)\ d\theta\cdot \Bigg[\frac{r^3}{3}\Bigg]_{0}^{1}\\
+        &=\Bigg[-\cos(\theta)\Bigg]_{0}^{\frac{\pi}{2}} \cdot \frac{1}{3}\\
+        &=\frac{1}{3}.
+    \end{align*}
+    Cálculo de $x_{CM}$:
+    \begin{align*}
+        x_{CM}
+        &=\frac{1}{M}\ \iint_D x\ \sigma(x,\ y)\ dA\\
+        &=3\ \int_{0}^{\frac{\pi}{2}}\int_{0}^{1} r^3\sin(\theta)\cos(\theta)\ drd\theta\\
+        &=3\ \int_{0}^{\frac{\pi}{2}}\sin(\theta)\cos(\theta)\ d\theta \cdot \Bigg[\frac{r^4}{4}\Bigg]_{0}^{1}\\
+        &=\frac{3}{4}\ \int_{0}^{\frac{\pi}{2}}\frac{\sin(2\theta)}{2}\ d\theta\\
+        &=\frac{3}{8}\ \cdot \Bigg[-\frac{\cos(2\theta)}{2}\Bigg]_{0}^{\frac{\pi}{2}}\\
+        &=\frac{3}{8}.
+    \end{align*}
+    Cálculo de $y_{CM}$:
+    \begin{align*}
+        y_{CM}
+        &=\frac{1}{M}\ \iint_D y\ \sigma(x,\ y)\ dA\\
+        &=3\ \int_{0}^{\frac{\pi}{2}}\int_{0}^{1} r^3\sin^2(\theta)\ drd\theta\\
+        &=3\ \int_{0}^{\frac{\pi}{2}}\sin^2(\theta)\ d\theta \cdot \Bigg[\frac{r^4}{4}\Bigg]_{0}^{1}\\
+        &=\frac{3}{4}\ \int_{0}^{\frac{\pi}{2}}\frac{1-\cos(2\theta)}{2}\ d\theta\\
+        &=\frac{3}{8}\ \cdot \Bigg[\theta-\frac{\sin(2\theta)}{2}\Bigg]_{0}^{\frac{\pi}{2}}\\
+        &=\frac{3}{8} \cdot \frac{\pi}{2}\\
+        &=\frac{3\pi}{16}.
+    \end{align*}
+
+    \item Determine o centro de gravidade (ou centro de massa) de uma lâmina plana limitada pela parábola $y = x^2$ e pelas retas $y = 0$ e $x = 4$, sabendo-se que a densidade no ponto $P = (x, y)$ é proporcional à abscissa do ponto $P$. \\ \textbf{Resolução:}
+    \begin{equation*}
+        x_{CM}=\frac{1}{M}\ \iint_D x\ \sigma(x,\ y)\ dA,\quad y_{CM}=\frac{1}{M}\ \iint_D y\ \sigma(x,\ y)\ dA.
+    \end{equation*}
+    Cálculo de $M$:
+    \begin{align*}
+        M
+        &=\iint_D \sigma(x,\ y)\ dA\\
+        &=\int_{0}^{4} \int_{0 }^{x^2}kx \ dydx\\
+        &=k\ \int_{0}^{4}x^3\ dx\\
+        &=k\ \Bigg[\frac{x^4}{4}\Bigg]_{0}^{4}\\
+        &=64k.
+    \end{align*}
+    Cálculo de $x_{CM}$:
+    \begin{align*}
+        x_{CM}
+        &=\frac{1}{M}\ \iint_D x\ \sigma(x,\ y)\ dA\\
+        &=\frac{1}{64k}\ \int_{0}^{4}\int_{0}^{x^2} kx^2\ dydx\\
+        &=\frac{1}{64}\ \int_{0}^{4} x^4\ dx\\
+        &=\frac{1}{320}\cdot \Big[x^5\Big]_{0}^{4}\\
+        &=\frac{1}{320}\cdot 1024\\
+        &=\frac{16}{5}.
+    \end{align*}
+    Cálculo de $y_{CM}$:
+    \begin{align*}
+        y_{CM}
+        &=\frac{1}{M}\ \iint_D y\ \sigma(x,\ y)\ dA\\
+        &=\frac{1}{64k}\ \int_{0}^{4}\int_{0}^{x^2}k xy\ dydx\\
+        &=\frac{1}{64}\ \int_{0}^{4} x\ \Bigg[\frac{y^2}{2}\Bigg]_{0}^{x^2}\ dx\\
+        &=\frac{1}{128}\ \int_{0}^{4} x^5\ dx\\
+        &=\frac{1}{128}\cdot \Bigg[\frac{x^6}{6}\Bigg]_{0}^{4}\\
+        &=\frac{1}{128}\cdot \frac{4096}{6}\\
+        &=\frac{16}{3}.
+    \end{align*}\newpage
+    
+    
+
+    \item Considere uma pá quadrada de um ventilador com lados de comprimento $2$ e com o canto inferior esquerdo colocado na origem. Se a densidade da pá for $\rho(x, y) = 1 + 0{,}1x$, é mais difícil girar a pá em torno do eixo $x$ ou do eixo $y$?\\ \textbf{Resolução:} \\
+    Cálculo momento de inércia em relação ao eixo $x$:
+    \begin{align*}
+        I_x&=\iint_D y^2\ \sigma(x,\ y)\ dA\\
+        &=\int_{0}^{2} \int_{0}^{2} \Big(y^2+\frac{xy^2}{10}\Big)\ dxdy\\
+        &=\int_{0}^{2}\Bigg[xy^2+\frac{x^2y^2}{20}\Bigg]_{0}^{2}\ dy\\
+        &=\int_{0}^{2}\Big(2y^2+\frac{y^2}{5}\Big)\ dy\\
+        &=\frac{11}{5}\int_{0}^{2}y^2\ dy\\
+        &=\frac{11}{5}\cdot \Bigg[\frac{y^3}{3}\Bigg]_{0}^{2}\\
+        &=\frac{88}{15}.
+    \end{align*}
+    Cálculo momento de inércia em relação ao eixo $y$:
+    \begin{align*}
+        I_y&=\iint_D x^2\ \sigma(x,\ y)\ dA\\
+        &=\int_{0}^{2} \int_{0}^{2} \Big(x^2+\frac{x^3}{10}\Big)\ dxdy\\
+        &=\int_{0}^{2} \Bigg[\frac{x^3}{3}+\frac{x^4}{40}\Bigg]_{0}^{2}\ dy\\
+        &=\frac{46}{15}\ \int_{0}^{2}\ dy\\
+        &=\frac{92}{15}.
+    \end{align*}
+    Portanto, é mais difícil girar a pá em torno do eixo $y$, pois $I_x < I_y$.
+    \newpage
+    \item A função densidade conjunta para um par de variáveis aleatórias \(X\) e \(Y\) é
+    \[
+    f(x, y) = 
+    \begin{cases}
+    C x(1 + y) & \text{se } 0 \leq x \leq 1,\ 0 \leq y \leq 2 \\
+    0 & \text{caso contrário}
+    \end{cases}
+    \]
+    
+    \begin{enumerate}
+        \item[(a)] Determine o valor da constante \( C \).\\
+        \textbf{Resolução:}\\
+        \begin{equation*}
+            \iint_D f(x,\ y)\ dA=1.
+        \end{equation*}
+        Cálculo da integral dupla:
+        \begin{align*}
+            \iint_D f(x,\ y)\ dA
+            &=\int_{0}^{2} \int_{0}^{1} Cx(1+y)\ dxdy\\
+            &=C\ \int_{0}^{2} \Bigg[\frac{x^2}{2}+\frac{x^2y}{2}\Bigg]_{0}^{1}\ dy\\
+            &=\frac{C}{2}\ \int_{0}^{2} y+1\ dy\\
+            &=\frac{C}{2}\cdot\Bigg[\frac{y^2}{2}+y\Bigg]_{0}^{2}\\
+            &=\frac{C}{2}\cdot 4\\
+            &=2C\Rightarrow \ 2C=1\Rightarrow\ C=\frac{1}{2}.
+        \end{align*}
+        \item[(b)] Encontre \( P(X \leq 1,\ Y \geq 1) \).\\ \textbf{Resolução:}\\
+        Possivelmente, houve um erro de digitação, uma vez que o resultado não está de acordo com o gabarito.\\
+        Para $ P(X \leq 1,\ Y \geq 1)$:\\
+        Cálculo integral dupla:
+        \begin{align*}
+            \iint_D f(x,\ y)\ dA
+            &=\frac{1}{2}\ \int_{1}^{2} \int_{0}^{1} x(1+y)\ dxdy\\
+            &=\frac{1}{2}\ \int_{1}^{2} \Bigg[\frac{x^2}{2}+\frac{x^2y}{2}\Bigg]_{0}^{1}\ dy\\
+            &=\frac{1}{4}\ \int_{1}^{2} y+1\ dy\\
+            &=\frac{1}{4}\cdot\Bigg[\frac{y^2}{2}+y\Bigg]_{1}^{2}\\
+            &=\frac{1}{4}\cdot \frac{5}{2}\\
+            &=\frac{5}{8}=0,625.
+        \end{align*}
+        \newpage
+        Para $ P(X \leq 1,\ Y \leq 1)$:\\
+        Cálculo integral dupla:
+        \begin{align*}
+            \iint_D f(x,\ y)\ dA
+            &=\frac{1}{2}\ \int_{0}^{1} \int_{0}^{1} x(1+y)\ dxdy\\
+            &=\frac{1}{2}\ \int_{0}^{1} \Bigg[\frac{x^2}{2}+\frac{x^2y}{2}\Bigg]_{0}^{1}\ dy\\
+            &=\frac{1}{4}\ \int_{0}^{1} y+1\ dy\\
+            &=\frac{1}{4}\cdot\Bigg[\frac{y^2}{2}+y\Bigg]_{0}^{1}\\
+            &=\frac{1}{4}\cdot \frac{3}{2}\\
+            &=\frac{3}{8}=0,375.
+        \end{align*}
+        \item[(c)] Encontre \( P(X + Y \leq 1) \).\\ \textbf{Resolução:} \\
+        Cálculo integral dupla:
+        \begin{align*}
+            \iint_D f(x,\ y)\ dA
+            &=\frac{1}{2}\ \int_{0}^{1} \int_{0}^{1-y} x(1+y)\ dxdy\\
+            &=\frac{1}{2}\ \int_{0}^{1} \Bigg[\frac{x^2}{2}+\frac{x^2y}{2}\Bigg]_{0}^{1-y}\ dy\\
+            &=\frac{1}{4}\ \int_{0}^{1} y^3-y^2-y+1\ dy\\
+            &=\frac{1}{4}\cdot\Bigg[\frac{y^4}{4}-\frac{y^3}{3}-\frac{y^2}{2}+y\Bigg]_{0}^{1}\\
+            &=\frac{1}{4}\cdot \frac{5}{12}\\
+            &=\frac{5}{48}\approx 0,1042.
+        \end{align*}
+    \end{enumerate}
+    
+    (Resp. (a) \( \frac{1}{2} \) \quad (b) \( 0{,}375 \) \quad (c) \( \frac{5}{48} \approx 0{,}1042 \))
+    
+    \item Quando estudamos uma contaminação epidêmica, supomos que a probabilidade de um indivíduo infectado disseminar a doença para um indivíduo não infectado seja uma função da distância entre eles. Considere uma cidade circular com raio de $10 \ \text{km}$ na qual a população está uniformemente distribuída. Para um indivíduo não infectado no ponto $A = (x_0, y_0)$, suponha que a função probabilidade seja dada por
+    \[
+    f(P) = \frac{1}{20} \left[ 20 - d(P, A) \right]
+    \]
+    onde $d(P, A)$ denota a distância entre os pontos $P$ e $A$.
+    
+    \begin{itemize}
+        \item[(a)] Suponha que a exposição de uma pessoa à doença seja a soma das probabilidades de adquirir a doença de todos os membros da população. Suponha ainda que as pessoas infectadas estejam uniformemente distribuídas pela cidade, existindo $k$ indivíduos contaminados por quilômetro quadrado. Determine a integral dupla que representa a exposição de uma pessoa que reside em $A$.\\
+        \textbf{Resolução:}\\
+        Determinação da integral dupla:
+        \begin{equation*}
+            k\ \iint_D f(P)\ dA=\frac{k}{20}\ \iint_D(20-\sqrt{(x-x_0)^2+(y-y_0)^2})\ dA.
+        \end{equation*}
+        \newpage
+
+        \item[(b)] Calcule a integral para o caso em que $A$ está no centro da cidade e para o caso em que $A$ está na periferia da cidade. Onde seria preferível viver?\\ \textbf{Resolução:}\\
+        \textbf{Primeiro caso:}\\
+        Coordenadas polares:
+        \begin{equation*}
+            x=r\cos(\theta),\quad y=r\sin(\theta),\quad 0 \le r \le 10, \quad 0 \le \theta \le 2\pi.
+        \end{equation*}
+        Cálculo da integral dupla:
+        \begin{align*}
+            \frac{k}{20}\ \iint_D(20-\sqrt{(x-x_0)^2+(y-y_0)^2})\ dA&=\frac{k}{20}\ \int_{0}^{2\pi}\int_{0}^{10}(20-r)r\ drd\theta\\
+            &=\frac{k}{20}\ \int_{0}^{2\pi}\int_{0}^{10}20r-r^2\ drd\theta\\
+            &=\frac{k}{20}\ \int_{0}^{2\pi}\Bigg[10r^2-\frac{r^3}{3}\Bigg]_{10}^{0}\ d\theta\\
+            &=\frac{100k}{3}\ \int_{0}^{2\pi}\ d\theta\\
+            &=\frac{200\pi k}{3}\approx209k.
+        \end{align*}
+        \textbf{Segundo caso:}\\
+        Coordenadas polares:
+        \begin{equation*}
+            x=r\cos(\theta),\quad y=r\sin(\theta),\quad 0 \le r \le -20\cos(\theta), \quad \frac{\pi}{2} \le \theta \le \frac{3\pi}{2}.
+        \end{equation*}
+        Cálculo da integral dupla:
+        \begin{align*}
+            \frac{k}{20}\ \iint_D(20-\sqrt{(x-x_0)^2+(y-y_0)^2})\ dA&=\frac{k}{20}\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\int_{0}^{-20\cos(\theta)}(20-r)r\ drd\theta\\
+            &=\frac{k}{20}\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\int_{0}^{-20\cos(\theta)}20r-r^2\ drd\theta\\
+            &=\frac{k}{20}\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\Bigg[10r^2-\frac{r^3}{3}\Bigg]_{0}^{-20\cos(\theta)}\ d\theta\\
+            &=\frac{k}{20}\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\Bigg(4000\cos^2(\theta)+\frac{8000\cos^3(\theta)}{3}\Bigg)\ d\theta\\
+            &=\frac{200k}{3}\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\Bigg(3\cos^2(\theta)+2\cos^3(\theta)\Bigg)\ d\theta\\
+            &=\frac{200k}{3}\ \Bigg(\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}3\cos^2(\theta)\ d\theta+\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}2\cos^3(\theta)\ d\theta\Bigg)\\
+            &=\frac{200k}{3}\ \Bigg(3\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \frac{1+\cos(2\theta)}{2}\ d\theta+2\ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\cos(\theta)(1-\sin^2(\theta))\ d\theta\Bigg)\\
+            &=\frac{200k}{3}\ \Bigg(\frac{3}{2}\  \Bigg[\theta+\frac{\sin(2\theta)}{2}\Bigg]_{\frac{\pi}{2}}^{\frac{3\pi}{2}}-2\ \int_{-1}^{1}(1-u^2)\ du\Bigg),\ u=\sin(\theta)\\
+            &=\frac{200k}{3}\ \Bigg(\frac{3\pi}{2}\  -2\ \Bigg[u-\frac{u^3}{3}\Bigg]_{-1}^{1}\Bigg)\\
+            &=\frac{200k}{3}\ \Bigg(\frac{3\pi}{2}\  -2\cdot \frac{4}{3}\Bigg)\\
+            &=200k\ \Bigg(\frac{\pi}{2}\  -\frac{8}{9}\Bigg)\approx136k.\\
+        \end{align*}
+        Portanto, seria preferível viver na periferia, uma vez que $136k<209k$.
+    \end{itemize} 
+
+    \item Determine a área do plano \( z = 2 + 3x + 4y \) que está acima do retângulo \( [0,5] \times [1,4] \). (Resp. \(15\sqrt{26}\))\\ \textbf{Resolução:}\\
+    Aplicação da definição:
+    \begin{align*}
+        A&=\iint_D \sqrt{\Bigg(\frac{\partial z}{\partial x}\Bigg)^2+\Bigg(\frac{\partial z}{\partial y}\Bigg)^2+1}\ dA\\
+        &=\int_{1}^{4} \int_{0}^{5} \sqrt{26}\ dxdy\\
+        &=5\sqrt{26}\ \int_{1}^{4}\ dy\\
+        &=15\sqrt{26}.
+    \end{align*}
+    
+    \item Determine a área do plano \( 3x + 2y + z = 6 \) que está no primeiro octante. (Resp. \(3\sqrt{14}\))\\ \textbf{Resolução:} \\
+    Aplicação da definição:
+    \begin{align*}
+        A&=\iint_D \sqrt{\Bigg(\frac{\partial z}{\partial x}\Bigg)^2+\Bigg(\frac{\partial z}{\partial y}\Bigg)^2+1}\ dA\\
+        &=\int_{0}^{3} \int_{0}^{2-\frac{2y}{3}} \sqrt{14}\ dxdy\\
+        &=\sqrt{14}\ \int_{0}^{3}\Big(2-\frac{2y}{3}\Big)\ dy\\
+        &=\sqrt{14}\cdot \Bigg[2y-\frac{y^2}{3}\Bigg]_{0}^{3}\\
+        &=3\sqrt{14}.
+    \end{align*}
+    
+    \item Determine a área do cilindro \( y^2 + z^2 = 9 \) que está acima do retângulo com vértices \( (0,0), (4,0), (0,2) \) e \( (4,2) \). (Resp. \(12\sin^{-1}(2/3)\))\\ \textbf{Resolução:}\\
+    Parametrização da superfície:
+    \begin{equation*}
+        \gamma(x,\ y)=(x,\ y,\ \sqrt{9-y^2}),\ 0 \le x \le 4,\ 0\ \le y \le 2.
+    \end{equation*}
+    Cálculo das derivadas parciais:
+    \begin{equation*}
+        \gamma_x=(1,\ 0,\ 0),\quad \gamma_y=\Big(0,\ 1,\ -\frac{y}{\sqrt{9-y^2}}\Big).
+    \end{equation*}
+    Cálculo do produto vetorial:
+    \begin{equation*}
+        \gamma_x \times \gamma_y =
+        \begin{vmatrix}
+            i & j & k\\
+            1 & 0 & 0\\
+            0 & 1 & -\frac{y}{\sqrt{9-y^2}}
+        \end{vmatrix}
+        =\Big(0,\ \frac{y}{\sqrt{9-y^2}},\ 1\Big)\Rightarrow\ \|\gamma_x \times \gamma_y\|= \sqrt{\frac{y^2}{9-y^2}+1}.
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        A&=\iint_D \| \gamma_x \times \gamma_y\| \ dA\\
+        &=\int_{0}^{4}\int_{0}^{2} \sqrt{\frac{y^2}{9-y^2}+1}\ dydx\\
+        &=3\ \int_{0}^{4} \int_{0}^{2}\frac{1}{\sqrt{9-y^2}}\ dydx,\ y=3\sin(u)\Rightarrow\ dy=3\cos(u)\ du\\
+        &=3\ \int_{0}^{4} \int_{0}^{\arcsin(\frac{2}{3})}\frac{3\cos(u)}{\sqrt{9-9\sin^2(u)}}\ dudx\\
+        &=3\ \int_{0}^{4} \int_{0}^{\arcsin(\frac{2}{3})}\frac{3\cos(u)}{3\ \sqrt{1-\sin^2(u)}}\ dudx\\
+        &=3\ \int_{0}^{4} \int_{0}^{\arcsin(\frac{2}{3})}\ dudx\\
+        &=3\ \int_{0}^{4} \arcsin\Big(\frac{2}{3}\Big)\ dx\\
+        &=12\arcsin\Big(\frac{2}{3}\Big).
+    \end{align*}
+    
+    
+    \item Determine a área do parabolóide hiperbólico \( z = y^2 - x^2 \) que está entre os cilindros \( x^2 + y^2 = 1 \) e \( x^2 + y^2 = 4 \). (Resp. \( \frac{\pi}{6} \left[ 17\sqrt{17} - 5\sqrt{5} \right] \))\\ \textbf{Resolução:}\\
+    Parametrização da superfície:
+    \begin{equation*}
+        \gamma(x,\ y) =(x,\ y,\ y^2-x^2)
+    \end{equation*}
+    Cálculo do produto vetorial:
+    \begin{equation*}
+        \gamma_x \times \gamma_y =
+        \begin{vmatrix}
+            i & j & k\\
+            1 & 0 & -2x\\
+            0 & 1 & 2y
+        \end{vmatrix}
+        =\Big(2x,\ -2y,\ 1\Big)\Rightarrow\ \|\gamma_x \times \gamma_y\|= \sqrt{4x^2+4y^2+1}.
+    \end{equation*}
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 1 \le r \le 2,\quad 0 \le \theta \le 2\pi.
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        A&=\iint_D \| \gamma_x \times \gamma_y\| \ dA\\
+        &=\int_{0}^{2\pi}\int_{1}^{2} r\sqrt{4r^2+1}\ drd\theta,\ u=4r^2+1\Rightarrow\ du = 8r\ dr\\
+        &=\frac{1}{8}\ \int_{0}^{2\pi}\int_{5}^{17} \sqrt{u}\ dud\theta\\
+        &=\frac{1}{12}\ \int_{0}^{2\pi} \Big[u\sqrt{u}\Big]_{5}^{17}\ d\theta\\
+        &=\frac{1}{12}\ \int_{0}^{2\pi} 17\sqrt{17}-5\sqrt{5}\ d\theta\\
+        &=\frac{17\sqrt{17}-5\sqrt{5}}{12}\ \int_{0}^{2\pi}\ d\theta\\
+        &=\frac{\pi}{6}(17\sqrt{17}-5\sqrt{5}).
+    \end{align*}
+    
+    \newpage
+    \item A Figura 5 mostra a superfície criada quando o cilindro \( y^2 + z^2 = 1 \) intercepta o cilindro \( x^2 + z^2 = 1 \). Encontre a área desta superfície.\\ \textbf{Resolução:}\\
+    Parametrização da superfície:
+    \begin{equation*}
+        \gamma(x,\ y) =(x,\ \cos(\theta),\ \sin(\theta)),\ -|\cos(\theta)|\le x \le |\cos(\theta)|,\ 0 \le \theta \le 2\pi.
+    \end{equation*}
+    Cálculo do produto vetorial:
+    \begin{equation*}
+        \gamma_x \times \gamma_y =
+        \begin{vmatrix}
+            i & j & k\\
+            1 & 0 & 0\\
+            0 & -\sin(\theta) & \cos(\theta)
+        \end{vmatrix}
+        =\Big(0,\ -\cos(\theta),\ -\sin(\theta)\Big)\Rightarrow\ \|\gamma_x \times \gamma_y\|= 1.
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        A&=2\iint_D \| \gamma_x \times \gamma_y\| \ dA\\
+        &=2\int_{0}^{2\pi}\int_{-|\cos(\theta)|}^{|\cos(\theta)|} \ dxd\theta\\
+        &=4\ \int_{0}^{2\pi}|\cos(\theta)|\ d\theta\\
+        &=4\ \Bigg(\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos(\theta)\ d\theta-\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\cos(\theta)\ d\theta\Bigg)\\
+        &=4\ \Bigg(\Big[\sin(\theta)\Big]_{-\frac{\pi}{2}}^{\frac{\pi}{2}}-\Big[\sin(\theta)\Big]_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\Bigg)\\
+        &=4\cdot 4\\
+        &=16.
+    \end{align*}
+
+    \item Calcule a integral tripla $ \displaystyle \iiint\limits_{D} xy^{2} z^{3} \, dV $ onde $D$ é a região no primeiro octante limitado pela superfície $z = xy$ e os planos $y = x$, $x = 1$ e $z = 0$.  (Resp. $ \displaystyle \frac{1}{364} $.)\\ \textbf{Resolução:}\\
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D xy^2z^3\ dV &= \int_{0}^{1} \int_{0}^{x} \int_{0}^{xy}xy^2z^3\ dzdydx\\
+        &=\int_{0}^{1} \int_{0}^{x} \Bigg[\frac{xy^2z^4}{4}\Bigg]_{0}^{xy}\ dydx\\
+        &=\frac{1}{4}\ \int_{0}^{1} \int_{0}^{x} x^5y^6\ dydx\\
+        &=\frac{1}{4}\ \int_{0}^{1} \Bigg[\frac{x^5y^7}{7}\Bigg]_{0}^{x}\ dx\\
+        &=\frac{1}{28}\ \int_{0}^{1}x^{12}\ dx\\
+        &=\frac{1}{28}\ \Bigg[\frac{x^{13}}{13}\Bigg]_{0}^{1}\\
+        &=\frac{1}{364}.
+    \end{align*}
+    \newpage
+    \item Calcule a integral tripla 
+    $ \displaystyle \iiint\limits_{D} x \, dV $
+    onde $D$ é o tetraedro com faces sobre os planos coordenados $x = 0$, $y = 0$, $z = 0$ e o sobre o plano 
+    $ \displaystyle x + \frac{y}{2} + z = 1 $.  
+    (Resp. $ \displaystyle \frac{1}{12} $.)\\ \textbf{Resolução:}\\
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D xy^2z^3\ dV &= \int_{0}^{1} \int_{0}^{2-2x} \int_{0}^{1-x-\frac{y}{2}}x\ dzdydx\\
+        &=\int_{0}^{1} \int_{0}^{2-2x}x\ \Big(1-x-\frac{y}{2}\Big)\ dydx\\
+        &=\int_{0}^{1} \int_{0}^{2-2x}\Big(x-x^2-\frac{xy}{2}\Big)\ dydx\\
+        &=\int_{0}^{1} \Bigg[xy-x^2y-\frac{xy^2}{4}\Bigg]_{0}^{2-2x}\ dx\\
+        &=\int_{0}^{1} x^3-2x^2+x\ dx\\
+        &=\Bigg[\frac{x^4}{4}-\frac{2x^3}{3}+\frac{x^2}{2}\Bigg]_{0}^{1}\\
+        &=\frac{1}{4}-\frac{2}{3}+\frac{1}{2}\\
+        &=\frac{1}{12}.
+    \end{align*}
+    
+    \item Calcule o volume do sólido abaixo do gráfico de 
+    $ \displaystyle z = 1 + x^{2} + 3y^{2} $ e acima do plano $xy$ 
+    para $(x,y)$ restrito à região limitada pelas curvas 
+    $ y = x $, $ y = -x + 2 $ e $ y = 0 $.  
+    (Resp. $ \displaystyle \frac{8}{3} $.)\\ \textbf{Resolução:}\\
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D\ dV &= \int_{0}^{1} \int_{y}^{2-y} \int_{0}^{1+x^2+3y^2}\ dzdxdy\\
+        &= \int_{0}^{1} \int_{y}^{2-y} 1+x^2+3y^2\ dxdy\\
+        &= \int_{0}^{1} \Bigg[x+\frac{x^3}{3}+3xy^2\Bigg]_{y}^{2-y}\ dy\\
+        &=\frac{1}{3}\ \int_{0}^{1} (-20y^3+24y^2-18y+14)\ dy\\
+        &=\frac{1}{3}\ \Bigg[-5y^4+8y^3-9y^2+14y\Bigg]_{0}^{1}\\
+        &=\frac{1}{3}\cdot 8\\
+        &=\frac{8}{3}.
+    \end{align*}
+    \newpage
+    \item Use integral tripla para calcular o volume da região entre os planos 
+    $ x + y + 2z = 2 $ e $ 2x + 2y + z = 4 $ no primeiro octante.  
+    (Resp. $ \displaystyle 2 $.)\\ \textbf{Resolução:}\\
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D\ dV &= \int_{0}^{2} \int_{0}^{2-x} \int_{1-\frac{x}{2}-\frac{y}{2}}^{4-2x-2y}\ dzdxdy\\
+        &=\frac{1}{2}\ \int_{0}^{2} \int_{0}^{2-x}(-3x-3y+6)\ dydx\\
+        &=\frac{1}{4}\ \int_{0}^{2} (-3x^2-12x+12)\ dx\\
+        &=\frac{1}{4}\ \Bigg[x^3-6x^2+12x\Bigg]_{0}^{2}\\
+        &=\frac{1}{4}\cdot 8\\
+        &=2.
+    \end{align*}
+
+    \item Calcule a integral de $ f(x,y,z) = z $ sobre o sólido que está acima do plano $xy$ 
+    e abaixo do cone $ z = \sqrt{3(x^{2} + y^{2})} $ e que seja interior ao cilindro 
+    $ x^{2} + y^{2} = 9 $ e exterior ao cilindro $ x^{2} + y^{2} = 1 $.  
+    (Resp. $ \displaystyle 60\pi $.)\\ \textbf{Resolução:}\\
+    Coordenadas cilindricas:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad z=z,\quad 1 \le r \le 3,\quad 0\le \theta \le 2\pi,\quad 0 \le z \le r\sqrt{3}.
+    \end{equation*}
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D z \ dV &= \int_{0}^{2\pi} \int_{1}^{3} \int_{0}^{r\sqrt{3}}\ dzdxdy\\
+        &=\frac{3}{2}\ \int_{0}^{2\pi} \int_{1}^{3}r^3\ dxdy\\
+        &=\frac{3}{2}\ \int_{0}^{2\pi} \Bigg[\frac{r^4}{4}\Bigg]_{1}^{3}\ dy\\
+        &=30\ \int_{0}^{2\pi} \ dy\\
+        &=60\pi.
+    \end{align*}
+    \newpage
+    \item Calcule o volume do sólido que está simultaneamente no interior da esfera 
+    $ x^{2} + y^{2} + z^{2} = 4 $ e do cilindro $ x^{2} + (y-1)^{2} = 1 $.  
+    (Resp.: $ \displaystyle \frac{16}{3} \left( \pi - \frac{4}{3} \right) $.)\\ \textbf{Resolução:}\\
+    Coordenadas cilindricas:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad z=z,\quad 0\le r \le 2\sin(\theta),\quad 0 \le \theta \le \pi,\quad -\sqrt{4-r^2} \le z \le \sqrt{4-r^2}.
+    \end{equation*}
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_V\ \sqrt{4-x^2-y^2}\ dV&=\int_{0}^{\pi}\int_{0}^{2\sin(\theta)}\int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} r\ dzdrd\theta\\
+        &=2\ \int_{0}^{\pi}\int_{0}^{2\sin(\theta)} r\sqrt{4-r^2}\ drd\theta,\ u=4-r^2\ \Rightarrow\ du=-2r\ dr\\
+        &=\int_{0}^{\pi}\int_{4-4\sin^2(\theta)}^{4} \sqrt{u}\ dud\theta,\ 4-4\sin^2(\theta)=4(1-\sin^2(\theta))=4\cos^2(\theta)\\
+        &=\frac{2}{3}\ \int_{0}^{\pi} \Big[u\sqrt{u}\Big]_{4cos^2(\theta)}^{4}\ d\theta\\
+        &=\frac{16}{3}\ \int_{0}^{\pi} 1-|\cos^3(\theta)|\ d\theta\\
+        &=\frac{16}{3}\ \Bigg( \int_{0}^{\frac{\pi}{2}} 1-\cos^3(\theta)\ d\theta +\int_{\frac{\pi}{2}}^{\pi} 1+\cos^3(\theta)\ d\theta\Bigg)\\
+        &=\frac{16}{3}\ \Bigg(\frac{\pi}{2}-\frac{2}{3} +\frac{\pi}{2}-\frac{2}{3} \Bigg)\\
+        &=\frac{16}{3}\Bigg(\pi-\frac{4}{3}\Bigg)
+    \end{align*}
+
+    \item Calcule $\displaystyle \iiint_D (x^2 + y^2 + z^2) \, dV$ onde $D$ é o conjunto dos pontos $(x, y, z) \in \mathbb{R}^3$ tais que $1 \leq x^2 + y^2 + z^2 \leq 4$ e $z \geq 0$. (Resp.: $ \displaystyle \frac{62\pi}{5} $)\\ \textbf{Resolução:}\\
+    Coordenadas esféricas:
+    \begin{equation*}
+        x=\rho \cos(\theta)\sin(\phi),\quad y=\rho\sin(\theta)\sin(\phi),\quad z=\rho\cos(\phi),\quad 1\le \rho\le 2,\quad 0 \le \theta \le 2\pi,\quad 0\le \phi\le \frac{\pi}{2}.
+    \end{equation*}
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D (x^2+y^2+z^2) \ dV &= \int_{0}^{\frac{\pi}{2}} \int_{0}^{2\pi} \int_{1}^{2}\ \rho^4\sin(\phi)\ d\rho d\theta d\phi \\
+        &= \int_{0}^{\frac{\pi}{2}} \int_{0}^{2\pi}\ \Bigg[\frac{\rho^5\sin(\phi)}{5}\Bigg]_{1}^{2}\ d\theta d\phi\\
+        &=\frac{31}{5}\ \int_{0}^{\frac{\pi}{2}} \int_{0}^{2\pi} \sin(\phi)\ d\theta d\phi\\
+        &=\frac{62\pi}{5}\ \int_{0}^{\frac{\pi}{2}} \sin(\phi)\  d\phi\\
+        &=\frac{62\pi}{5}\ \Big[-\cos(\phi)\Big]_{0}^{\frac{\pi}{2}}\\
+        &=\frac{62\pi}{5}
+    \end{align*}
+    \newpage
+    \item Calcule a integral tripla $\displaystyle \iiint_D e^{(x^2 + y^2 + z^2)^{3/2}} \, dV$ onde $D$ é o sólido no primeiro octante limitado pela esfera $x^2 + y^2 + z^2 = 16$ e os cones $z = \sqrt{3(x^2 + y^2)}$ e $z = \sqrt{\frac{x^2 + y^2}{3}}$ (Resp.: $\displaystyle \frac{\pi}{12}(\sqrt{3} - 1)(e^{64} - 1)$.)\\ \textbf{Resolução:}\\
+    Coordenadas esféricas:
+    \begin{equation*}
+        x=\rho \cos(\theta)\sin(\phi),\quad y=\rho\sin(\theta)\sin(\phi),\quad z=\rho\cos(\phi),\quad 0\le \rho\le 4,\quad 0 \le \theta \le \frac{\pi}{2},\quad \frac{\pi}{6}\le \phi\le \frac{\pi}{3}.
+    \end{equation*}
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_D e^{(x^2+y^2+z^2)^{3/2}} \ dV &= \int_{0}^{\frac{\pi}{2}} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \int_{0}^{4}e^{\rho^3} \rho^2 \sin(\phi)\ d\rho d\phi d\theta,\ u=\rho^3\Rightarrow\ du=3\rho^2\ d\rho \\
+        &=\frac{1}{3}\ \int_{0}^{\frac{\pi}{2}} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \int_{0}^{64}e^{u} \sin(\phi)\ du d\phi d\theta\\
+        &=\frac{e^{64}-1}{3}\ \int_{0}^{\frac{\pi}{2}}\int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \sin(\phi)\ d\phi d\theta\\
+        &=\frac{1}{6}(\sqrt{3}-1)(e^{64}-1)\ \int_{0}^{\frac{\pi}{2}}\ d\theta\\
+        &=\frac{\pi}{12}(\sqrt{3}-1)(e^{64}-1).
+    \end{align*}
+    
+    \item Seja $B = \{ (x, y, z) \in \mathbb{R}^3; \; 0 \leq z \leq 1 - x^2 - y^2 \}$.
+
+    \begin{itemize}
+        \item[(a)] Escreva a integral $\displaystyle \iiint_B xyz \, dV$ em coordenadas cartesianas, cilíndricas e esféricas.\\ \textbf{Resolução:}\\
+        \textbf{Coordenadas cartesianas:}\\
+        Integral tripla:
+        \begin{equation*}
+            \int_{-1}^{1}\int_{\sqrt{1-x^2}}^{-\sqrt{1-x^2}}\int_{0}^{1-x^2-y^2}xyz\ dzdydx.
+        \end{equation*}
+        \textbf{Coordenadas cilindricas:}\\
+        Mudança de coordenada:
+        \begin{equation*}
+            x=r\cos(\theta),\quad y=r\sin(\theta),\quad z=z,\quad 0\le r\le 1,\quad 0 \le \theta \le 2\pi,\quad 0 \le z \le 1-r^2.
+        \end{equation*}
+        Integral tripla:
+        \begin{equation*}
+            \int_{0}^{2\pi}\int_{0}^{1}\int_{0}^{1-r^2}r^3\sin(\theta)\cos(\theta)z \ dzdrd\theta.
+        \end{equation*}
+        \textbf{Coordenadas esféricas:}\\
+        Mudança de coordenada:
+        \begin{align*}
+            x=\rho \cos(\theta)\sin(\phi),\quad y=\rho\sin(\theta)\sin(\phi),\quad z=\rho\cos(\phi),\\ \\ 0\le \rho\le \frac{-\cos(\phi)+\sqrt{4-3\cos^2(\phi)}}{2\sin^2(\phi)},\quad 0 \le \theta \le 2\pi,\quad 0\le \phi\le \frac{\pi}{2}.
+        \end{align*}
+        Integral tripla:
+        \begin{equation*}
+            \int_{0}^{2\pi}\int_{0}^{\frac{\pi}{2}}\int_{0}^{\frac{-\cos(\phi)+\sqrt{4-3\cos^2{\phi}}}{2\sin^2(\phi)}}\rho^5\sin(\theta)\cos(\theta)\sin^3(\phi)\cos(\phi) \ d\rho d\phi d\theta.
+        \end{equation*}
+        \newpage
+        \item[(b)] Encontre o valor da integral usando uma das integrais iteradas obtida no item (a). (Resp.: $0$.)\\ \textbf{Resolução:}\\
+        Cálculo da integral tripla:
+        \begin{align*}
+            \iiint_D xyz \ dV &= \int_{0}^{2\pi} \int_{0}^{1} \int_{0}^{1-r^2}r^3\sin(\theta)\cos(\theta)z\ dz dr d\theta\\
+            &=\frac{1}{2}\ \int_{0}^{2\pi}\int_{0}^{1}(r^3-2r^5+r^7)\sin(\theta)\cos(\theta)\ drd\theta\\
+            &=\frac{1}{48}\ \int_{0}^{2\pi}\sin(\theta)\cos(\theta)\ d\theta\\
+            &=\frac{1}{48}\int_{0}^{2\pi}\frac{\sin(2\theta)}{2}\ d\theta\\
+            &=\frac{1}{96}\ \Bigg[-\frac{\cos(2\theta)}{2}\Bigg]_{0}^{2\pi}\\
+            &=\frac{1}{192}\cdot 0\\
+            &=0.
+        \end{align*}
+    \end{itemize}
+
+    \item Considere a transformação definida por
+    \begin{equation*}
+        x = uv \quad\text{e}\quad y = v - u
+    \end{equation*}
+    \begin{itemize}
+        \item [(a)] Usando $T$, determine a imagem $D$ no plano $xy$ do retângulo $R$ no plano $uv$ de vértices $(0,1)$, $(1,1)$, $(1,2)$ e $(0,2)$.\\ \textbf{Resolução:}\\
+        Transformação das coordenadas:
+        \begin{align*}
+            (0,\ 1) &\Rightarrow\ (0.1,\ 1-0)=(0,\ 1)\\
+            (1,\ 1) &\Rightarrow\ (1.1,\ 1-1)=(1,\ 0)\\
+            (1,\ 2) &\Rightarrow\ (1.2,\ 2-1)=(2,\ 1)\\
+            (0,\ 2) &\Rightarrow\ (0.2,\ 2-0)=(0,\ 2)\\
+        \end{align*}
+        A imagem D corresponde à área delimitida pelos pontos (0,\ 1), (1,\ 0), (2,\ 1), (0,\ 2).
+        \item [(b)] Calcule a área de $D$. (Resp.: $2$)\\ \textbf{Resolução:}\\
+        Cálculo da integral dupla:
+        \begin{equation*}
+            A=\iint_D \ dA=\int_{0}^{2}\int_{0}^{2-\frac{x}{2}}\ dydx-1=\int_{0}^{2}2-\frac{x}{2}\ dx-1=\Bigg[2x-\frac{x^2}{4}\Bigg]_{0}^{2}-1=4-1-1=2.
+        \end{equation*}
+    \end{itemize}
+
+    \item Considere a transformação $T$ definida por
+    \begin{equation*}
+        x=u+v\quad e \quad y=v-u^2
+    \end{equation*}
+    \begin{itemize}
+        \item [(a)] Determine a imagem $D$ no plano $xy$ da região $Q$ no plano $uv$ limitada pelas retas $u = 0$, $v = 0$ e $u + v = 2$.\\ \textbf{Resolução:}\\
+        Determinação da imagem D:
+        \begin{align*}
+            &0\le u,\ 0\le v,\ u+v\le2\ \Rightarrow\ 0 \le u+v \le 2\ \Rightarrow\ 0 \le x \le 2\\ 
+            &x=u+v\ \Rightarrow\ v=x-u,\ y=v-u^2\ \Rightarrow\ y=x-u-u^2\ \Rightarrow -x^2 \le y \le x
+        \end{align*}
+        Portanto, $D=\{(x,y)\in \mathbb{R}^2:0 \le x \le 2,\ -x^2\le y \le x\}$
+        \item [(b)]Usando $T$, calcule
+        $ \displaystyle \iint_D \left( x - y + \frac{1}{4} \right)^{-\frac{1}{2}} \, dA.$ (\text{Resp.: } 4)
+        \\ \textbf{Resolução:}\\
+        Cálculo do determinante da matriz Jacobiana:
+        \begin{equation*}
+            \frac{\partial(x,\ y)}{\partial(u,\ v)}=
+            \begin{vmatrix}
+                \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\ \\
+                \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\\
+            \end{vmatrix}
+            =
+            \begin{vmatrix}
+                1 & 1\\ \\
+                -2u & 1
+            \end{vmatrix}
+            =1+2u.
+        \end{equation*}
+        Cálculo da integral dupla:
+        \begin{align*}
+            \iint_D \left( x - y + \frac{1}{4} \right)^{-\frac{1}{2}} \, dA&=\int_{0}^{2} \int_{0}^{2-u}\Big(u+u^2+\frac{1}{4}\Big)^{-\frac{1}{2}}(1+2u)\ dvdu\\
+            &=\int_{0}^{2} \int_{0}^{2-u}\Bigg[\Big(u+\frac{1}{2}\Big)^2\Bigg]^{-\frac{1}{2}}(1+2u)\ dvdu\\
+            &=\int_{0}^{2} \int_{0}^{2-u}\frac{1+2u}{u+\frac{1}{2}}\ dvdu\\
+            &=\int_{0}^{2} \int_{0}^{2-u}\frac{2(u+\frac{1}{2})}{u+\frac{1}{2}}\ dvdu\\
+            &=2\ \int_{0}^{2} \int_{0}^{2-u}\ dvdu\\
+            &=2\ \int_{0}^{2}(2-u) \ du\\
+            &=2\ \Big[(2u-\frac{u^2}{2})\Big]_{0}^{2} \\
+            &=2\cdot 2\\
+            &=4.
+        \end{align*}
+    \end{itemize}
+
+    \item Calcule $\iint_D e^{(y-x)/(y+x)}\, dA$, onde $D$ é a região triangular limitada pela reta $x + y = 2$ e os eixos coordenados. (Resp.: $e - e^{-1}$)\\
+    \textbf{Resolução:}\\
+    Mudança de variável:
+    \begin{equation*}
+        u=y-x,\quad v=y+x\ \Rightarrow \ x=\frac{v-u}{2},\quad  y=\frac{u+v}{2}.
+    \end{equation*}
+    Cálculo do determinante da matriz Jacobiana:
+    \begin{equation*}
+        \frac{\partial(x,\ y)}{\partial(u,\ v)}=
+            \begin{vmatrix}
+                \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\ \\
+                \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\\
+            \end{vmatrix}
+            =
+            \begin{vmatrix}
+                -\frac{1}{2} & \frac{1}{2}\\ \\
+                \frac{1}{2} & \frac{1}{2}
+            \end{vmatrix}
+            =-\frac{1}{2}
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_{0}^{2}\int_{-v}^{v}e^{\frac{u}{v}}\ \frac{1}{2}\ dudv&=\frac{1}{2}\ \int_{0}^{2}\Big[ve^{\frac{u}{v}}\Big]_{-v}^{v}\ dv\\
+        &=\frac{1}{2}\ \int_{0}^{2} \Big(ve-\frac{v}{e}\Big)\ dv\\
+        &=\frac{1}{2}\ \Bigg[\frac{v^2e}{2}-\frac{v^2}{2e}\Bigg]_{0}^{2}\\
+        &=\frac{1}{2}\ \Big(2e-\frac{2}{e}\Big)\\
+        &=e-\frac{1}{e}
+    \end{align*}
+
+    \item Calcule a área do conjunto $R$ no primeiro quadrante limitada pelas retas $y = x$ e $y = 2x$ e hipérboles $xy = 1$ e $xy = 2$. (Resp.: $\frac{1}{2} \ln 2$)\\ \textbf{Resolução:}\\
+    Mudança de variável:
+    \begin{equation*}
+        u=\frac{y}{x},\quad v=xy,\quad x=\sqrt{\frac{v}{u}},\quad y=\sqrt{uv}.
+    \end{equation*}
+    Cálculo do determinante da matriz Jacobiana:
+    \begin{equation*}
+        \frac{\partial(x,\ y)}{\partial(u,\ v)}=
+            \begin{vmatrix}
+                \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\ \\
+                \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\\
+            \end{vmatrix}
+            =
+            \begin{vmatrix}
+                -\frac{v}{2u^2}\sqrt{\frac{u}{v}} & \frac{1}{2u}\sqrt{\frac{u}{v}}\\ \\
+                \frac{v}{2\sqrt{uv}} & \frac{u}{2\sqrt{uv}}
+            \end{vmatrix}
+            =-\frac{1}{2u}.
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_{1}^{2}\int_{1}^{2}\Bigg|-\frac{1}{2u}\Bigg|\ dudv&=\frac{1}{2}\ \int_{1}^{2}\int_{1}^{2} \frac{1}{u} \ dudv\\
+        &=\frac{1}{2}\ \int_{1}^{2}\Big[\ln(u)\Big]_{1}^{2} \ dv\\
+        &=\frac{\ln(2)}{2}\ \int_{1}^{2} \ dv\\
+        &=\frac{\ln(2)}{2}.
+    \end{align*}
+    
+    \item Calcule a integral $\iint_R \frac{1}{y^2} \, dA$, onde $R$ é a região do exercício anterior.
+    \\ \textbf{Resolução:}\\
+    Cálculo da integral dupla:
+    \begin{align*}
+        \int_{1}^{2}\int_{1}^{2}\frac{1}{uv}\ \Bigg|-\frac{1}{2u}\Bigg|\ dudv&=\frac{1}{2}\ \int_{1}^{2}\int_{1}^{2} \frac{1}{u^2v} \ dudv\\
+        &=\frac{1}{2}\ \int_{1}^{2}\Big[-\frac{1}{uv}\Big]_{1}^{2} \ dv\\
+        &=\frac{1}{4}\ \int_{1}^{2}\frac{1}{v} \ dv\\
+        &=\frac{1}{4}\ \Big[\ln(v)\Big]_{1}^{2}\\
+        &=\frac{\ln(2)}{4}
+    \end{align*}
+    
+    \item Esboce a região definida por $y \ge x$, $x^2 + y^2 \le 2$ e $x^2 + y^2 \ge 1$. Encontre a integral da função
+    \[
+    f(x,y) = \frac{xy}{x^2 + y^2}
+    \]
+    sobre esta região. (Resp.: $0$)\\ \textbf{Resolução}\\
+    Coordenadas polares:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad 1 \le r \le \sqrt{2}, \quad\frac{\pi}{4}\le \theta \le \frac{5\pi}{4}.
+    \end{equation*}
+    Cálculo da integral dupla:
+    \begin{align*}
+        \iint_D\frac{xy}{x^2+y^2}\ dA&=\int_{\frac{\pi}{4}}^{\frac{5\pi}{4}}\int_{1}^{\sqrt{2}}r\sin(\theta)\cos(\theta)\ dr d\theta\\
+        &=\int_{\frac{\pi}{4}}^{\frac{5\pi}{4}}\sin(\theta)\cos(\theta)\Bigg[\frac{r^2}{2}\Bigg]_{1}^{\sqrt{2}}\ d\theta\\
+        &=\frac{1}{2}\ \int_{\frac{\pi}{4}}^{\frac{5\pi}{4}}\sin(\theta)\cos(\theta)\ d\theta\\
+        &=\frac{1}{4}\ \int_{\frac{\pi}{4}}^{\frac{5\pi}{4}}\sin(2\theta)\ d\theta\\
+        &=\frac{1}{8}\ \Big[-\cos(2\theta)\Big]_{\frac{\pi}{4}}^{\frac{5\pi}{4}}\\
+        &=\frac{1}{8}\cdot 0\\
+        &=0.
+    \end{align*}
+    \newpage
+    \item Encontre a área delimitada pela curva $r^2 = \cos\theta$, $-\pi/2 \le \theta \le \pi/2$. (Resp.: $1$)\\ \textbf{Resolução:}\\
+    Cálculo da integra dupla:
+    \begin{align*}
+        \iint_D\ dA&=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_{0}^{\sqrt{\cos(\theta)}}r\ drd\theta\\
+        &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \Bigg[\frac{r^2}{2}\Bigg]_{0}^{\sqrt{\cos(\theta)}}\ d\theta\\
+        &=\frac{1}{2}\ \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\theta)\ d\theta\\
+        &=\frac{1}{2}\ \Big[\sin(\theta)\Big]_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\\
+        &=\frac{1}{2}\ \Big[\sin\Big(\frac{\pi}{2}\Big)-\sin\Big(-\frac{\pi}{2}\Big)\Big]\\
+        &=\frac{1}{2}\cdot 2\\
+        &=1.
+    \end{align*}
+    
+    \item Seja $A$ a região em $\mathbb{R}^3$ limitada pelos planos $y = 1$, $y = -x$, $x = 0$, $z = 0$ e $z = -x$. Calcule
+    \[
+    \iiint_A e^{x+y+z} \, dV.
+    \]
+    (Resp.: $3 - e$)\\ \textbf{Resolução:}\\
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_A e^{x+y+z} \, dV&=\int_{-1}^{0} \int_{-x}^{1}\int_{0}^{-x}e^{x+y+z}\ dzdydx\\
+        &=\int_{-1}^{0} \int_{-x}^{1}\Big[e^{x+y+z}\Big]_{0}^{-x}\ dydx\\
+        &=\int_{-1}^{0} \int_{-x}^{1}(e^y-e^{x+y})\ dydx\\
+        &=\int_{-1}^{0} \Big[e^y-e^{x+y}\Big]_{-x}^{1}\ dx\\
+        &=\int_{-1}^{0} (e-e^{x+1}-e^{-x}+1)\ dx\\
+        &=\Big[ex-e^{x+1}+e^{-x}+x\Big]_{-1}^{0}\\
+        &=3-e.
+    \end{align*}
+
+    \item Encontre o volume da região em $\mathbb{R}^3$ limitada acima pela esfera $x^2 + y^2 + z^2 = 1$ e abaixo pela superfície $z = x^2 + y^2$.  
+    (Resp.: $2\pi\left[ -\frac{1}{3}(1 - r_0^2)^{3/2} + \frac{1}{3} - \frac{r_0^4}{4} \right]$ onde $r_0^2 = (\sqrt{5} - 1)/2$)\\ \textbf{Resolução:}\\
+    Coordenadas cilindricas:
+    \begin{equation*}
+        x=r\cos(\theta),\quad y=r\sin(\theta),\quad z=z,\quad 0\le r \le \sqrt{\frac{\sqrt{5}-1}{2}},\quad 0 \le \theta\le 2\pi,\quad r^2\le z\le \sqrt{1-r^2}.
+    \end{equation*}
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_V\ dV&=\int_{0}^{2\pi}\int_{0}^{\sqrt{\frac{\sqrt{5}-1}{2}}}\int_{r^2}^{\sqrt{1-r^2}}r\ dzdrd\theta\\
+        &=\int_{0}^{2\pi}\int_{0}^{\sqrt{\frac{\sqrt{5}-1}{2}}}(r\sqrt{1-r^2}-r^3)\ drd\theta\\
+        &=\int_{0}^{2\pi}\int_{0}^{\sqrt{\frac{\sqrt{5}-1}{2}}}(r\sqrt{1-r^2})\ drd\theta-\int_{0}^{2\pi}\int_{0}^{\sqrt{\frac{\sqrt{5}-1}{2}}}r^3\ drd\theta,\ u=1-r^2\ \Rightarrow\ du=-2r\ dr\\
+        &=\frac{1}{2}\ \int_{0}^{2\pi}\int_{1-\frac{\sqrt{5}-1}{2}}^{1}\sqrt{u}\ dud\theta-\int_{0}^{2\pi}\int_{0}^{\sqrt{\frac{\sqrt{5}-1}{2}}}r^3\ drd\theta,\ r_0=\frac{\sqrt{5}-1}{2}\\
+        &=\frac{1}{3}\ \int_{0}^{2\pi}\Big[\sqrt{u^3}\Big]_{1-r_0}^{1}\ d\theta-\int_{0}^{2\pi}\Bigg[\frac{r^4}{4}\Bigg]_{0}^{\sqrt{r_0}}\ d\theta\\
+        &=\frac{1}{3}\ \int_{0}^{2\pi}1-\sqrt{(1-r_0)^3}\ d\theta-\frac{1}{4}\ \int_{0}^{2\pi}r_0^2\ d\theta\\
+        &=\frac{2\pi}{3}\ (1-\sqrt{(1-r_0)^3})-\frac{2\pi r_0^2}{4}\\
+        &=2\pi\Bigg[\frac{1}{3}-\frac{1}{3}\sqrt{(1-r_0)^3}-\frac{ r_0^2}{4}\Bigg]\\
+    \end{align*}
+
+    \item Encontre o volume acima da metade superior do cone $z^2 = x^2 + y^2$ e dentro da esfera $\rho = 2a\cos\phi$. (Resp.: $\pi a^3$)\\ \textbf{Resolução:}\\
+    Coordenadas esféricas:
+    \begin{equation*}
+        x=\rho\cos(\theta)\sin(\phi),\quad y=\rho\sin(\theta)\sin(\phi),\quad z=\rho\cos(\phi),\quad 0\le \rho \le 2a\cos(\phi),\quad 0 \le \theta \le 2\pi,\quad 0 \le \phi \le \frac{\pi}{4}.
+    \end{equation*}
+    Cálculo da integral tripla:
+    \begin{align*}
+        \iiint_V\ dV&=\int_{0}^{\frac{\pi}{4}} \int_{0}^{2\pi} \int_{0}^{2a\cos(\phi)} \rho^2\sin(\phi)\ d\rho d\theta d\phi\\
+        &=\int_{0}^{\frac{\pi}{4}} \int_{0}^{2\pi} \Bigg[\frac{\rho^3}{3}\Bigg]_{0}^{2a\cos(\phi)}\sin(\phi)\ d\theta d\phi\\
+        &=\frac{8a^3}{3}\int_{0}^{\frac{\pi}{4}} \int_{0}^{2\pi} \sin(\phi)\cos^3(\phi)\ d\theta d\phi\\
+        &=\frac{16a^3\pi}{3}\int_{0}^{\frac{\pi}{4}} \sin(\phi)\cos^3(\phi)\ d\phi,\ u=\cos(\phi)\ \Rightarrow\ du=-\sin(\theta)\ d\theta\\
+        &=\frac{16a^3\pi}{3}\int_{\frac{\sqrt{2}}{2}}^{1} u^3\ du\\
+        &=\frac{16a^3\pi}{3}\ \Bigg[\frac{u^4}{4}\Bigg]_{\frac{\sqrt{2}}{2}}^{1}\\
+        &=\frac{16a^3\pi}{3}\cdot \frac{3}{16}\\
+        &=\pi a^3.
+    \end{align*}
+    \newpage
+    \item Encontre a integral de linha de $f(x,y,z) = x + y + z$ sobre o segmento de reta de $(1,2,3)$ a $(0,-1,1)$.  
+    (Resp.: $3\sqrt{14}$)\\ \textbf{Resolução:}\\
+    Parametrização da curva:
+    \begin{equation*}
+        \gamma(t)=(t,\ 3t-1,\ 2t+1),\quad 0 \le t \le 1.
+    \end{equation*}
+    Cálculo da integral de linha:
+    \begin{align*}
+        \int_Cf\ ds&=\int_{a}^{b}f(\gamma(t))\cdot |\gamma'(t)|\ dt\\
+        &=\int_{0}^{1} (t+3t-1+2t+1)\sqrt{1+9+4}\ dt\\
+        &=\int_{0}^{1} 6t\sqrt{14}\ dt\\
+        &=6\sqrt{14}\ \int_{0}^{1} t\ dt\\
+        &=6\sqrt{14}\  \Bigg[\frac{t^2}{2}\Bigg]_{0}^{1}\\
+        &=6\sqrt{14}\cdot\frac{1}{2}\\
+        &=3\sqrt{14}.
+    \end{align*}
+
+    \item Integre a função $f(x,y,z) = x + \sqrt{y} - z^2$ sobre o caminho (Figura 6) de $(0,0,0)$ a $(1,1,1)$ dado por $C_1 \cup C_2$, onde
+    \[
+    C_1: \quad \gamma(t) = t\vec{i} + t^2\vec{j}, \quad 0 \le t \le 1
+    \]
+    \[
+    C_2: \quad \gamma(t) = \vec{i} + \vec{j} + t\vec{k}, \quad 0 \le t \le 1.
+    \]
+    (Resp.: $\frac{1}{6}(5\sqrt{5} + 9)$)\\ \textbf{Resolução:}\\
+    \begin{equation*}
+        \int_Cf\ ds=\int_{C_1}f\ ds+\int_{C_2}f\ ds
+    \end{equation*}
+    Cálculo de $\int_{C_1}f\ ds$:
+    \begin{align*}
+        \int_{C_1}f\ ds&=\int_{a}^{b}f(\gamma(t))\cdot |\gamma'(t)|\ dt\\
+        &=\int_{0}^{1}(t+t)\sqrt{1+4t^2}\ dt\\
+        &=2\ \int_{0}^{1}t\sqrt{1+4t^2}\ dt,\ u=1+4t^2\ \Rightarrow\ du=8t\ dt\\
+        &=\frac{1}{4}\ \int_{1}^{5}\sqrt{u}\ du\\
+        &=\frac{1}{6}\ \Big[u\sqrt{u}\Big]_{1}^{5}\\
+        &=\frac{1}{6}\cdot (5\sqrt{5}-1).
+    \end{align*}
+    Cálculo de $\int_{C_2}f\ ds$:
+    \begin{align*}
+        \int_{C_2}f\ ds&=\int_{a}^{b}f(\gamma(t))\cdot |\gamma'(t)|\ dt\\
+        &=\int_{0}^{1}(2-t^2)\ dt\\
+        &=\Bigg[2t-\frac{t^3}{3}\Bigg]_{0}^{1}\\
+        &=\frac{5}{3}.
+    \end{align*}
+    Cálculo de $\int_{C}f\ ds$:
+    \begin{equation*}
+        \int_Cf\ ds=\int_{C_1}f\ ds+\int_{C_2}f\ ds=\frac{1}{6}\cdot (5\sqrt{5}-1)+\frac{5}{3}=\frac{1}{6}(5\sqrt{5}+9).
+    \end{equation*}
+    \item Uma argola de arame circular com densidade constante $\delta$ encontra-se ao longo da circunferência $C$ de equação $x^2 + y^2 = a^2$ no plano $xy$.  
+    Encontre o momento de inércia da argola em relação ao eixo $z$, mais especificamente, calcule a integral de linha  
+    \[
+    I_z = \oint_C (x^2 + y^2)\delta \, ds.
+    \]
+    (Resp.: $I_z = 2\pi\delta a^3$)\\ \textbf{Resolução:}\\ 
+    Parametrização da curva:
+    \begin{equation*}
+        \gamma(t)=(a\cos(t),\ a\sin(t)),\quad 0 \le t \le 2\pi.
+    \end{equation*}
+    Cálculo da integral de linha:
+    \begin{equation*}
+        \int_{0}^{2\pi}a^2\delta\sqrt{a^2\sin^2(t)+a^2\cos^2(t)}\ dt=\delta a^3\int_{0}^{2\pi}\ dt=2\pi\delta a^3.
+    \end{equation*}
+
+    \item Um arame tem a forma da curva obtida como a interseção da porção da esfera
+    $x^2+y^2+z^2=4$, $y\ge 0$, com o plano $x+z=2$. Sabendo que a densidade em
+    cada ponto é dada por $f(x,y,z)=xy$, calcule a massa total do arame.
+    \quad(Resp.: $4$.)\\ \textbf{Resolução:}\\
+    Parametrização da curva:
+    \begin{equation*}
+        \gamma(t)=(1+\sin(t),\ \sqrt{2}\cos(t),\ 1-\sin(t)),\quad -\frac{\pi}{2}\le t\le \frac{\pi}{2}.
+    \end{equation*}
+    Cálculo da integral de linha:
+    \begin{align*}
+        \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}(2\cos(t)+2\sin(t)\cos(t))\ dt&=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}(2\cos(t)+\sin(2t))\ dt\\
+        &=\Bigg[2\sin(t)-\frac{\cos(2t)}{2}\Bigg]_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\\
+        &=2+\frac{1}{2}+2-\frac{1}{2}\\
+        &=4.
+    \end{align*}
+    
+    
+    
+
+    
+    \end{enumerate}
+
+\end{document}
