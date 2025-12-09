@@ -4,8 +4,8 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "pdf/**.tex"
-      - "pdf/**.bib"
+      - "src/**.tex"
+      - "src/**.bib"
 
 permissions:
   contents: write
@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         file:
-          - pdf/lista1.tex
+          - src/lista1.tex
 
     steps:
       - uses: actions/checkout@v4
@@ -32,10 +32,11 @@ jobs:
           mkdir -p pdf
           name=$(basename ${{ matrix.file }} .tex)
           mv $name.pdf pdf/$name.pdf
+          echo "PDF_NAME=$name" >> $GITHUB_ENV
 
       - name: Commit PDF
         uses: EndBug/add-and-commit@v9
         with:
-          add: "pdf/$name.pdf"
-          message: "Atualiza PDF: $name"
+          add: "pdf/${{ env.PDF_NAME }}.pdf"
+          message: "Atualiza PDF: ${{ env.PDF_NAME }}"
           default_author: github_actions
