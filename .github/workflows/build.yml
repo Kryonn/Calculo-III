@@ -4,8 +4,8 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "listas/**.tex"
-      - "listas/**.bib"
+      - "pdf/**.tex"
+      - "pdf/**.bib"
 
 permissions:
   contents: write
@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         file:
-          - listas/lista1.tex
+          - pdf/lista1.tex
 
     steps:
       - uses: actions/checkout@v4
