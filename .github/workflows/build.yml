@@ -16,17 +16,28 @@ jobs:
 
     strategy:
       matrix:
+        # ARQUIVOS DE CONVERSÃO
         file:
           - src/lista1.tex
 
     steps:
       - uses: actions/checkout@v4
 
+      # VERIFICAÇÃO LATEX (LINT)
+      - name: LaTeX lint (chktex)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chktex
+          chktex -q -n30 src/*.tex
+
+      # COMPILAÇÃO
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
           root_file: ${{ matrix.file }}
+          args: -interaction=nonstopmode -halt-on-error
 
+      # MOVE PDF
       - name: Move PDF
         run: |
           mkdir -p pdf
@@ -34,6 +45,7 @@ jobs:
           mv $name.pdf pdf/$name.pdf
           echo "PDF_NAME=$name" >> $GITHUB_ENV
 
+      # COMMIT
       - name: Commit PDF
         uses: EndBug/add-and-commit@v9
         with:
