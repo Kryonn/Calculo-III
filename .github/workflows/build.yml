@@ -1,0 +1,32 @@
+name: Build and Commit PDF
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Compile LaTeX
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: src/main.tex
+        compiler: latexmk
+
+    - name: Create pdf directory
+      run: mkdir -p pdf
+
+    - name: Move PDF
+      run: mv main.pdf pdf/documento.pdf
+
+    - name: Commit PDF
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: "pdf/documento.pdf"
+        message: "Atualiza PDF automaticamente"
+        default_author: github_actions
